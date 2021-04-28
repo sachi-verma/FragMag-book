@@ -1,0 +1,140 @@
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+
+body{
+	
+	background-color:#fcfcfc;
+}
+.heading{
+	margin: 5% 30%;
+	font-size: 20px;
+}
+.zoom{
+	font-size: 32px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0; 
+	margin:5px;
+	padding:0;
+
+
+}
+
+.text{
+	margin: 5%;
+}
+#vid{
+	margin: 5%;
+}
+.image-section{
+	margin: 0 20%;
+}
+
+.gradient-right{
+	background: rgb(0, 0, 0);
+	background: linear-gradient(270deg, rgba(0, 0, 0, 0.3692519244025736) 0%, rgba(137, 137, 137, 0.3672911400888481) 5%, rgba(255, 255, 255, 0) 10%);
+}
+.gradient-left{
+	background: rgb(0, 0, 0);
+	background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(137, 137, 137, 0.3672911400888481) 5%, rgba(255, 255, 255, 0) 10%);
+}
+
+.flipbook-viewport{
+	visibility: hidden;
+	overflow:hidden;
+	width:100vw;
+	height:100vh;
+	display:flex;
+	justify-content:center;
+}
+
+.flipbook-viewport .container{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.flipbook-viewport .container .flipbook{
+	width:922px;
+	height:600px;
+	margin:auto;
+}
+
+
+
+.flipbook-viewport .page{
+	width:461px;
+	height:600px;
+	background-color:white;
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
+
+.flipbook .page{
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.flipbook-viewport .page img{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin:0;
+}
+
+.flipbook-viewport .shadow{
+	-webkit-transition: -webkit-box-shadow 0.5s;
+	-moz-transition: -moz-box-shadow 0.5s;
+	-o-transition: -webkit-box-shadow 0.5s;
+	-ms-transition: -ms-box-shadow 0.5s;
+
+	-webkit-box-shadow:0 0 20px #ccc;
+	-moz-box-shadow:0 0 20px #ccc;
+	-o-box-shadow:0 0 20px #ccc;
+	-ms-box-shadow:0 0 20px #ccc;
+	box-shadow:0 0 20px #ccc;
+}
+.magazine-viewport .zoom-in .even .gradient,
+.magazine-viewport .zoom-in .odd .gradient {
+
+	display: none;
+
+}
+
+.zoom-icon-in {
+	background-position: 0 0;
+	cursor: pointer;
+}
+
+.zoom-icon-in.zoom-icon-in-hover {
+	background-position: -22px 0;
+	cursor: pointer;
+}
+
+.zoom-icon-out {
+	background-position: -44px 0;
+}
+
+.zoom-icon-out.zoom-icon-out-hover {
+	background-position: -66px 0;
+	cursor: pointer;
+}
+
+.bottom {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+
