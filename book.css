@@ -7,10 +7,33 @@
 body{
 	
 	background-color:#fcfcfc;
+	overflow: hidden;
 }
 .heading{
 	margin: 5% 30%;
 	font-size: 20px;
+}
+
+.main-book{
+	display: flex;
+	width: 90vw;
+	height: 100vh;
+	align-items:center;
+	justify-content:space-between;
+	margin:auto;
+	visibility: hidden;
+}
+.prev{
+	text-decoration: none;
+	visibility:hidden;
+	cursor: pointer;
+	margin: 0 0 0 30px;
+	
+}
+.next{
+	text-decoration: none;
+	visibility:visible;
+	margin: 0 30px 0 0;
 }
 .zoom{
 	font-size: 32px;
@@ -43,31 +66,16 @@ body{
 	background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(137, 137, 137, 0.3672911400888481) 5%, rgba(255, 255, 255, 0) 10%);
 }
 
+
 .flipbook-viewport{
-	visibility: hidden;
-	overflow:hidden;
-	width:100vw;
-	height:100vh;
-	display:flex;
-	justify-content:center;
-}
-
-.flipbook-viewport .container{
-	display:flex;
-	justify-content:center;
-	align-items:center;
-}
-
-.flipbook-viewport .container .flipbook{
-	width:922px;
-	height:600px;
-	margin: 0 130px 0 0;
+	width: 922px;
+	height: 600px;
 }
 
 
-.flipbook-viewport .page{
-	width:461px;
-	height:600px;
+.page{
+	/* width:461px;
+	height:600px; */
 	background-color:white;
 	background-repeat:no-repeat;
 	background-size:100% 100%;
@@ -81,7 +89,7 @@ body{
 	box-shadow:0 0 20px rgba(0,0,0,0.2);
 }
 
-.flipbook-viewport .page img{
+.page img{
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -91,7 +99,7 @@ body{
 	margin:0;
 }
 
-.flipbook-viewport .shadow{
+.shadow{
 	-webkit-transition: -webkit-box-shadow 0.5s;
 	-moz-transition: -moz-box-shadow 0.5s;
 	-o-transition: -webkit-box-shadow 0.5s;
@@ -103,12 +111,7 @@ body{
 	-ms-box-shadow:0 0 20px #ccc;
 	box-shadow:0 0 20px #ccc;
 }
-.magazine-viewport .zoom-in .even .gradient,
-.magazine-viewport .zoom-in .odd .gradient {
 
-	display: none;
-
-}
 
 .zoom-icon-in {
 	background-position: 0 0;
