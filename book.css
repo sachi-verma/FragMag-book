@@ -61,9 +61,8 @@ body{
 .flipbook-viewport .container .flipbook{
 	width:922px;
 	height:600px;
-	margin:auto;
+	margin: 0 130px 0 0;
 }
-
 
 
 .flipbook-viewport .page{

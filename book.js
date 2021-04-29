@@ -32,7 +32,7 @@ $(".zoom").click(function(){
         $(".flipbook").css("transform", "scale(1)");
     }
     else{
-         $(".flipbook").css("transform", "scale(0.8)");
+         $(".flipbook").css("transform", "scale(0.7)");
     }
     
     
@@ -75,7 +75,7 @@ $(".zoom").click(function(){
 
      });
     
-     $( ".flipbook" ).css("transform", "scale(0.8)");
+     $( ".flipbook" ).css("transform", "scale(0.7)");
 
 
 
