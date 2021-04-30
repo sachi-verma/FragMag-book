@@ -73,13 +73,9 @@ body{
 	
 }
 
-
-
 .btns{
 	margin: -40px 0 0 415px;
 	font-size: 20px;
-
-	
 }
 
 
@@ -110,15 +106,6 @@ body{
 }
 
 .shadow{
-	-webkit-transition: -webkit-box-shadow 0.5s;
-	-moz-transition: -moz-box-shadow 0.5s;
-	-o-transition: -webkit-box-shadow 0.5s;
-	-ms-transition: -ms-box-shadow 0.5s;
-
-	-webkit-box-shadow:0 0 20px #ccc;
-	-moz-box-shadow:0 0 20px #ccc;
-	-o-box-shadow:0 0 20px #ccc;
-	-ms-box-shadow:0 0 20px #ccc;
 	box-shadow:0 0 20px #ccc;
 }
 
@@ -149,7 +136,7 @@ body{
 	width: 100%;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 500px){
 	.parent{
 		position:relative;
 		width: 100vw;
@@ -169,12 +156,58 @@ body{
 
 	}
 	.flipbook{
-		transform: scale(0.4);
 		margin-top: -60px !important;
 		margin-left: -270px !important;
 	}
 }
+@media screen and (orientation:landscape) and (min-device-width: 600px) and (max-device-width: 1000px){
+	.btns {
+		margin: -140px 0 0 300px;
+	}
+	.flipbook{
+		margin-left: -100px;
+	}
+	.flipbook-viewport{
+		margin-left: 0px;
+	}
+}
+@media screen and (orientation:landscape) and (min-device-width: 500px) and (max-device-width: 600px) {
+	.flipbook{
+		margin-left: -200px;
+	}
+	.flipbook-viewport{
+		margin-left: 0px;
+	}
+	.btns{
+		margin: -170px 0 0 200px;
+	}
+}
+@media screen and (min-device-width: 1000px) and (max-device-width: 1100px) {
+	.flipbook {
+		margin-left: 50px;
+		transform: scale(1)!important;
+	}
 
+	.flipbook-viewport {
+		margin-left: 0px;
+	}
 
+	.btns {
+		margin: 70px 0 0 400px;
+		font-size: 70px;
+	}
+}
+@media screen and (min-device-width: 700px) and (max-device-width: 800px) {
+	.flipbook {
+		margin-left: -80px;
+	}
 
+	.flipbook-viewport {
+		margin-left: 0px;
+	}
 
+	.btns {
+		margin: 0 0 0 300px;
+		font-size: 50px;
+	}
+}

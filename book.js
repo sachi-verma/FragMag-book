@@ -2,7 +2,6 @@
       $(".main-book").css("visibility", "visible");
   })
 
-
   function gradientRight() {
 
       var i;
@@ -10,7 +9,6 @@
           $("#" + i).addClass("gradient-right");
 
       }
-
   }
   gradientRight();
 
@@ -20,11 +18,10 @@
           $("#" + i).addClass("gradient-left");
 
       }
-
   }
   gradientLeft();
 
-  var x = 0;
+  var x = 0; //zoom 
   $(".zoom").click(function () {
       x++;
       if (x % 2 != 0) {
@@ -34,135 +31,103 @@
           $(".flipbook").css("transform", "scale(0.4)");
           $(".btns").css("margin-top", "-140px");
       }
-
-
-
   })
 
-
-  function resizeViewport() {
+  function resizeViewport() { //responsiveness
       var width = $(window).width(),
           height = $(window).height();
-          $('.main-book').css({
-              width: width,
-              height: height
-          })
-           $('.flipbook-viewport').css({
-              width: width
-              
-          })
-        // if(width < 1022 && width > 500){
-        //     var x = (1022 - width)/2;
-        //   $(".flipbook").turn("size", 922-x, 600-x);
-        // }
+      $('.main-book').css({
+          width: width,
+          height: height
+      })
+      $('.flipbook-viewport').css({
+          width: width
 
-      
-        if(width > height && width < 700 ){
-           
-                 $(".flipbook-viewport").css({"margin-left":-(800-width)});
-            
-            
-             $(".flipbook").css({"transform":"scale(0.4)"});
-             $(".flipbook").turn("size", 722, 470);
-             $(".flipbook-viewport").css({"width": width,
-              "height": height });
-            
-              
-        
-        }
-        if(width < height && width < 500 ){
-             $(".flipbook").css({"transform":"scale(0.4)"});
-
-        }
-        else{
-             $(".flipbook").turn("size", 922, 600);
-              $(".flipbook").css({"transform":"scale(0.8)", "margin-top": 0});
-        }
-       
+      })
 
 
+      if ((width < height && width < 500) || (width > height && width < 700)) { //mobile
+          $(".flipbook").css({
+              "transform": "scale(0.4)"
+          });
+      } else if (width > height && width < 1000) {   //landscape
 
+          $(".flipbook").css({
+              "transform": "scale(0.5)"
+          });
+      }
+     
+       else {
+          $(".flipbook").turn("size", 922, 600);
+          $(".flipbook").css({
+              "transform": "scale(0.8)",
+              "margin-top": 0
+          });
+      }
   }
 
   $(window).resize(function () {
-						resizeViewport();
+      resizeViewport();
   })
 
+  function loadApp() {
+      var book = $('.flipbook');
 
- 
+      if (book.width() == 0 || book.height() == 0) {
+          setTimeout(loadApp, 10);
+          return;
+      }
+      $('.flipbook').turn({
+
+          width: 922,
+
+          height: 600,
+
+          elevation: 50,
+
+          gradients: true,
 
 
+      });
 
+      $(".flipbook").css("transform", "scale(0.7)");
 
-          function loadApp() {
-              var book = $('.flipbook');
+      $(".flipbook").bind("first", function (event) {
+          $(".prev").css("visibility", "hidden");
+      });
 
-              if (book.width() == 0 || book.height() == 0) {
-                  setTimeout(loadApp, 10);
-                  return;
-              }
+      $(".flipbook").bind("last", function (event) {
+          $(".next").css("visibility", "hidden");
+      });
 
-              // Create the flipbook
+      $(".prev").click(function () {
+          $('.flipbook').turn('previous');
+          $(".next").css("visibility", "visible");
+      })
+      $(".next").click(function () {
+          $(".prev").css("visibility", "visible");
+          $('.flipbook').turn('next');
+      })
+      $(document).keydown(function (e) {
 
-              $('.flipbook').turn({
+          var previous = 37,
+              next = 39;
 
-                  width: 922,
+          switch (e.keyCode) {
+              case previous:
 
-                  height: 600,
-
-                  elevation: 50,
-
-                  gradients: true,
-
-                  autoCenter: true,
-
-              });
-
-              $(".flipbook").css("transform", "scale(0.7)");
-
-              $(".flipbook").bind("first", function (event) {
-                  $(".prev").css("visibility", "hidden");
-              });
-
-              $(".flipbook").bind("last", function (event) {
-                  $(".next").css("visibility", "hidden");
-              });
-
-              $(".prev").click(function () {
                   $('.flipbook').turn('previous');
                   $(".next").css("visibility", "visible");
-              })
-              $(".next").click(function () {
-                  $(".prev").css("visibility", "visible");
+
+                  break;
+              case next:
+
                   $('.flipbook').turn('next');
-              })
+                  $(".prev").css("visibility", "visible");
 
-
-              resizeViewport();
-
-
-              $(document).keydown(function (e) {
-
-                  var previous = 37,
-                      next = 39;
-
-                  switch (e.keyCode) {
-                      case previous:
-
-                          $('.flipbook').turn('previous');
-                          $(".next").css("visibility", "visible");
-
-                          break;
-                      case next:
-
-                          $('.flipbook').turn('next');
-                          $(".prev").css("visibility", "visible");
-
-                          break;
-                  }
-
-              });
-
-
+                  break;
           }
-          loadApp();
+      });
+      resizeViewport();
+  }
+  loadApp();
