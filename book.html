@@ -10,12 +10,12 @@
 </head>
 
 <body>
-	<!-- <div class="zoom"><i class="fas fa-expand-alt"></i></div> -->
+	<div class = "parent">
+	<div class="zoom"><i class="fas fa-expand-alt"></i></div>
 	<div class="main-book">
-		<a href="#" class="prev"><i class="fas fa-chevron-circle-left"></i></a>
+
 		<div class="flipbook-viewport">
 			<div class="flipbook">
-
 				<div style="background-image: url(./resources/1.jpg);" id="first"></div>
 				<div class="pages" id="2">
 					<div class="content">
@@ -128,9 +128,14 @@
 				</div>
 				<div style="background-image: url(./resources/1.jpg);" id="last"></div>
 			</div>
+			<div class="btns">
+				<a href="#" class="prev"><i class="fas fa-chevron-circle-left"></i></a>
+				<a href="#" class="next"><i class="fas fa-chevron-circle-right"></i></a>
+			</div>
 
 		</div>
-		<a href="#" class="next"><i class="fas fa-chevron-circle-right"></i></a>
+
+	</div>
 	</div>
 	<script src="https://kit.fontawesome.com/2025b8fd0a.js" crossorigin="anonymous"></script>
 	<script src="./extras/jquery.min.1.7.js"></script>
