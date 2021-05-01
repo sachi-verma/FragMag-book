@@ -1,376 +1,229 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700');
-
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
 }
 
-* {
-    box-sizing: border-box;
+body{
+	background-color:#fcfcfc;
+	overflow: hidden;
+}
+.heading{
+	margin: 5% 30%;
+	font-size: 20px;
 }
 
-h1 {
-    font-family: 'Roboto Condensed', sans-serif;
-    text-transform: uppercase;
-    font-size: 5.8em;
-    line-height: 0.78;
-    margin: 2rem 0;
-    font-weight: 700;
-    letter-spacing: -4px;
+.main-book{
+	display: flex;
+	width: 90vw;
+	height: 100vh;
+	align-items:center;
+	justify-content:space-between;
+	margin:auto;
+	visibility: hidden;
+}
+.btns a i{
+	color: #222;
+}
+.btns a i:hover{
+	color: red;
+
+}
+.prev{
+	visibility:hidden;
+	cursor: pointer;
+	margin: 0 0 0 30px;
+	
+}
+.next{
+	visibility:visible;
+	margin: 0 30px 0 0;
+}
+#btns-top{
+	display: flex;
+	justify-content: flex-end;
+}
+.back{
+	font-size: 27px;
+	position: absolute;
+	margin-right: 60px;
+	top: 10px;
+}
+.refresh{
+	font-size: 27px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0; 
+	margin:10px;
+	padding:0;
+
+
 }
 
-h1 .first {
-    font-size: 3.6rem;
+.text{
+	margin: 5%;
 }
-.h1 .release{
-    font-size: 1.8rem;
+#vid{
+	margin: 5%;
 }
-.thumbnail a img{
-    z-index: 1000;
-    margin: 200px 200px;
-}
-.thumbnail a{
-    text-decoration: none;
-}
-.thumbnail img:hover{
-    cursor: pointer;
-    transform: scale(1.4);
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.3s;
+.image-section{
+	margin: 0 20%;
 }
 
-h1 .japanese {
-    font-size: 1.8rem;
-    font-family: "Kozuka Gothic Pr6N";
-    padding-left: 20px;
-    letter-spacing: 0px;
+.gradient-right{
+	background: rgb(0, 0, 0);
+	background: linear-gradient(270deg, rgba(0, 0, 0, 0.3692519244025736) 0%, rgba(137, 137, 137, 0.3672911400888481) 5%, rgba(255, 255, 255, 0) 10%);
 }
-
-p.copy {
-    display: block;
-    float: left;
-    line-height: 1.5;
-}
-
-p.copy:before {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 4px;
-    background-color: #000;
-    margin-bottom: 200px;
-    margin-right: 20px;
-    float: left;
-    position: relative;
-    top: 6px;
-}
-
-.content {
-    padding: 50px;
-    box-sizing: border-box;
-    min-height: 100vh;
-}
-
-#wrap {
-    min-height: 100vh;
-    width: 100vw;
-}
-
-#bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 100vh;
-    background: #333;
-    background-image: url(https://jeffbredenkamp.neocities.org/bgBar-min.png);
-}
-
-.contentContainer {
-    max-width: 600px;
-    width: 100%;
-    background: #F8F8F8;
-    min-height: 100vh;
-    padding-left: 30px;
-    background-image: url(https://jeffbredenkamp.neocities.org/bgGrey-min.png);
-}
-.left{
-    float: left;
-}
-.right{
-    float: right;
-}
-
-.imageContainer {
-    height: 100vh;
-}
-
-.image {
-    width: 100%;
-    height: 100%;
-}
-
-.image.odaImg {
-    background: url(https://jeffbredenkamp.neocities.org/oda-min.png) top right no-repeat fixed;
-    background-size: cover;
+.gradient-left{
+	background: rgb(0, 0, 0);
+	background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(137, 137, 137, 0.3672911400888481) 5%, rgba(255, 255, 255, 0) 10%);
 }
 
 
-.image.dateImg {
-    background: url(https://jeffbredenkamp.neocities.org/date-min.png) top right no-repeat fixed;
-    background-size: cover;
+.flipbook-viewport{
+	width: 922px;
+	height: 600px;
+	margin-left: 200px;
+	
 }
 
-.image.toyotomiImg {
-    background: url(https://jeffbredenkamp.neocities.org/toyotomi-min.png) top right no-repeat fixed;
-    background-size: cover;
-}
-
-.image.uesugiImg {
-    background: url(https://jeffbredenkamp.neocities.org/uesugi-min.png) top right no-repeat fixed;
-    background-size: cover;
-}
-
-#logo {
-    width: 100%;
-    height: 80px;
-    background: #D93732;
-    background-image: url(https://jeffbredenkamp.neocities.org/logo-min.png);
-    background-size: 100% 100%;
-}
-
-nav ul {
-    list-style: none;
-    padding: 20px 0;
-    text-align: center;
-}
-
-nav ul li a {
-    color: #666666;
-    font-size: 1.3em;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 700;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
-.active {
-    color: #ffffff;
-}
-
-a.button {
-    color: #D93732;
-    font-size: 1.5em;
-    border-bottom: 4px solid #D93732;
-    text-decoration: none;
-    font-family: 'Roboto Condensed', sans-serif;
-    float: right;
-    margin-top: 50px;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-#countdown-1 {
-    padding: 270px 0 0 200px;
-} 
-#countdown-2{
-    padding: 270px 0 0 0;
-}
-
-@media (max-width: 500px) {
-    h1 {
-        font-size: 4em;
-    }
-
-    h1 .first {
-        font-size: 2.2rem;
-    }
-
-    p.copy:before {
-        display: none;
-    }
-
-    .japanese {
-        display: none;
-    }
-
-    .imageContainer {
-        height: 600px;
-    }
-
-    #bar {
-        width: 50px;
-        position: fixed;
-    }
-
-    #logo {
-        height: 50px;
-        width: 50px;
-    }
-
-    .contentContainer {
-        padding-left: 70px;
-        float: none;
-        min-height: 500px;
-    }
-    .content .countdownHolder{
-        width: 200px;
-        margin: 0;
-    }
-    
-    .thumbnail a img {
-        margin: 150px 100px;
-        width: 150px;
-        height: auto;
-    }
-    .image{
-        background: center;
-        width: 400px;
-        height:600px;
-    }
-    
-     #countdown-1, #countdown-2{
-         padding:200px 0 0 125px;
-         margin:0;
-         width: 380px;
-     }
-
-    .content {
-        padding: 20px;
-        min-height: 500px;
-    }
+.btns{
+	margin: -40px 0 0 415px;
+	font-size: 20px;
 }
 
 
-.shadow {
-    box-shadow: 0 0 20px #ccc;
-}
-.countdownHolder {
-    width: 800px;
-    margin: 0 auto;
-    font: 40px/1.5 'Open Sans Condensed', sans-serif;
-    text-align: center;
-    letter-spacing: -3px;
+.page{
+	/* width:461px;
+	height:600px; */
+	background-color:white;
+	background-repeat:no-repeat;
+	background-size:100% 100%;
 }
 
-.position {
-    display: inline-block;
-    height: 1.6em;
-    overflow: hidden;
-    position: relative;
-    width: 1.05em;
+.flipbook .page{
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	box-shadow:0 0 20px rgba(0,0,0,0.2);
 }
 
-.digit {
-    position: absolute;
-    display: block;
-    width: 1em;
-    background-color: #444;
-    border-radius: 0.2em;
-    text-align: center;
-    color: #fff;
-    letter-spacing: -1px;
+.page img{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin:0;
 }
 
-.digit.static {
-    box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.35);
-
-    background-image: linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
-    background-image: -o-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
-    background-image: -moz-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
-    background-image: -webkit-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
-    background-image: -ms-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
-
-    background-image: -webkit-gradient(linear,
-            left bottom,
-            left top,
-            color-stop(0.5, #3A3A3A),
-            color-stop(0.5, #444444));
+.shadow{
+	box-shadow:0 0 20px #ccc;
 }
 
-/**
- * You can use these classes to hide parts
- * of the countdown that you don't need.
- */
-
-.countDays {
-    /* display:none !important;*/
+.bottom {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 }
 
-.countDiv0 {
-    /* display:none !important;*/
+@media only screen and (max-width: 500px){
+	.refresh{
+		font-size: 27px;
+		
+	}
+	.back{
+		margin-right: 50px;
+		top: 10px;
+	}
+	.parent{
+		position:relative;
+		width: 100vw;
+		height: 100vh;
+	}
+	.btns{
+		position:absolute;
+        font-size: 30px;
+		margin-top: -140px;
+		margin-left: 130px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.flipbook-viewport{
+		margin-left: 0;
+
+	}
+	.flipbook{
+		margin-top: -60px !important;
+		margin-left: -270px !important;
+	}
 }
-
-.countHours {}
-
-.countDiv1 {}
-
-.countMinutes {}
-
-.countDiv2 {}
-
-.countSeconds {}
-
-
-.countDiv {
-    display: inline-block;
-    width: 16px;
-    height: 1.6em;
-    position: relative;
+@media screen and (orientation:landscape) and (min-device-width: 600px) and (max-device-width: 1000px){
+	.back{
+		margin-right: 60px;
+		font-size: 30px;
+		top: 5px;
+	}
+	.btns {
+		margin: -140px 0 0 300px;
+	}
+	.flipbook{
+		margin-left: -100px !important;
+	}
+	.flipbook-viewport{
+		margin-left: 0px;
+	}
 }
-
-.countDiv:before,
-.countDiv:after {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: #444;
-    border-radius: 50%;
-    left: 50%;
-    margin-left: -3px;
-    top: 0.5em;
-    box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.5);
-    content: '';
+@media screen and (orientation:landscape) and (min-device-width: 500px) and (max-device-width: 600px) {
+	.flipbook{
+		margin-left: -200px !important;
+	}
+	.flipbook-viewport{
+		margin-left: 0px;
+	}
+	.btns{
+		margin: -170px 0 0 200px;
+	}
 }
+@media screen and (min-device-width: 1000px) and (max-device-width: 1100px) {
+	.back {
+		font-size: 45px;
+		margin-right: 80px;
+	}
+	
+	.refresh{
+		font-size: 45px;
+	}
+	.flipbook {
+		margin-left: 50px !important;
+		transform: scale(1)!important;
+	}
 
-.countDiv:after {
-    top: 0.9em;
+	.flipbook-viewport {
+		margin-left: 0px;
+	}
+
+	.btns {
+		margin: 70px 0 0 400px;
+		font-size: 70px;
+	}
 }
+@media screen and (min-device-width: 700px) and (max-device-width: 800px) {
+	.flipbook {
+		margin-left: -80px!important;
+	}
 
-/*-------------------------
-	Simple reset
+	.flipbook-viewport {
+		margin-left: 0px;
+	}
 
-
-/*-------------------------
-	General Styles
---------------------------*/
-
-
-
-
-
-a,
-a:visited {
-    text-decoration: none;
-    outline: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-
-
-/*----------------------------
-	Main Section
------------------------------*/
-
-#note {
-    color: #666666;
-    font-size: 12px;
-    margin: 0 auto;
-    padding: 4px;
-    text-align: center;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
-    width: 400px;
+	.btns {
+		margin: -140px 0 0 320px;
+		font-size: 30px;
+	}
 }
