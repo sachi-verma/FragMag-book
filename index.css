@@ -5,7 +5,8 @@
 }
 
 body{
-	background-color:#fcfcfc;
+	background: rgb(245, 174, 236);
+	background: linear-gradient(90deg, rgba(245, 174, 236, 1) 0%, rgba(181, 255, 255, 1) 100%);
 	overflow: hidden;
 }
 .heading{
