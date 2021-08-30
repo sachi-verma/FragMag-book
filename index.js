@@ -2,24 +2,24 @@
       $(".main-book").css("visibility", "visible");
   })
 
-  function gradientRight() {
+//   function gradientRight() {
 
-      var i;
-      for (i = 2; i <= 7; i = i + 2) {
-          $("#" + i).addClass("gradient-right");
+//       var i;
+//       for (i = 2; i <= 7; i = i + 2) {
+//           $("#" + i).addClass("gradient-right");
 
-      }
-  }
-  gradientRight();
+//       }
+//   }
+//   gradientRight();
 
-  function gradientLeft() {
-      var i;
-      for (i = 3; i <= 7; i = i + 2) {
-          $("#" + i).addClass("gradient-left");
+//   function gradientLeft() {
+//       var i;
+//       for (i = 3; i <= 7; i = i + 2) {
+//           $("#" + i).addClass("gradient-left");
 
-      }
-  }
-  gradientLeft();
+//       }
+//   }
+//   gradientLeft();
 
 $(".refresh").click(function () {          //refresh btn
     $('.flipbook').turn("page", 1);
@@ -27,7 +27,6 @@ $(".refresh").click(function () {          //refresh btn
      $(".next").css("visibility", "visible");
 
 });
-
 
   function resizeViewport() { //responsiveness
       var width = $(window).width(),
@@ -44,7 +43,10 @@ $(".refresh").click(function () {          //refresh btn
 
       if ((width < height && width < 500) || (width > height && width < 700)) { //mobile
           $(".flipbook").css({
-              "transform": "scale(0.4)"
+              "transform": "scale(0.4)",
+              "margin-top": 50,
+              //"margin-right": 300
+              //"margin-left": 500
           });
       } else if (width > height && width < 1000) {   //landscape
 
@@ -54,10 +56,10 @@ $(".refresh").click(function () {          //refresh btn
       }
      
        else {
-          $(".flipbook").turn("size", 922, 600);
+          $(".flipbook").turn("size", 400, 600);
           $(".flipbook").css({
               "transform": "scale(0.8)",
-              "margin-top": 0
+              "margin-top": 0,
           });
       }
   }
@@ -75,7 +77,7 @@ $(".refresh").click(function () {          //refresh btn
       }
       $('.flipbook').turn({
 
-          width: 922,
+          width: 400,
 
           height: 600,
 
@@ -83,8 +85,9 @@ $(".refresh").click(function () {          //refresh btn
 
           gradients: true,
 
-          autoCenter: true
+          autoCenter: true,
 
+          display: 'single'
 
       });
 
