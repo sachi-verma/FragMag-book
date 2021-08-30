@@ -166,7 +166,7 @@ body{
 }
 @media screen and (orientation:landscape) and (min-device-width: 600px) and (max-device-width: 1000px){
 	.back{
-		margin-right: 60px;
+		margin-right: 50px;
 		font-size: 30px;
 		top: 5px;
 	}
